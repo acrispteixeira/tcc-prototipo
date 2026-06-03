@@ -1,5 +1,7 @@
-# Guia Prático — Ativação
-## Trilha de Autonomia e Discernimento Crítico em Contexto de Tecnologias Emergentes
+# TCC - Especialização em Linguagem e Tecnologia - FALE/UFMG
+## Disciplina Elaboração de Conteúdos Didáticos Digitais - 2026/1
+## Protótipo Trilha de Aprendizagem Híbrida - Etapa 1: Ativação
+### Trilha de Aprendizagem Híbrida Guia Prático Interativo + Vídeos Curtos + Estudos de Caso
 
 ---
 
@@ -40,4 +42,4 @@ Verbos de Bloom trabalhados nesta etapa: **Identificar, Descrever, Exemplificar.
 ## Como acessar
 
 O protótipo está disponível no arquivo `index.html` deste repositório.  
-Para visualizar online: acesse via [GitHub Pages](https://pages.github.com) após publicar este repositório.
+Para visualizar online: acesse via [este link]([https://pages.github.com](https://acrispteixeira.github.io/tcc-prototipo-ativacao/)) após publicado este repositório.
