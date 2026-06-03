@@ -1,0 +1,577 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Guia Prático — Ativação | Trilha de Autonomia e Discernimento Crítico</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,400;0,9..40,500;1,9..40,400&family=DM+Serif+Display&display=swap" rel="stylesheet">
+<style>
+  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+  :root {
+    --green-50: #E1F5EE;
+    --green-100: #9FE1CB;
+    --green-400: #1D9E75;
+    --green-600: #0F6E56;
+    --green-800: #085041;
+    --gray-50: #F7F6F3;
+    --gray-100: #EEEDE8;
+    --gray-200: #D3D1C7;
+    --gray-400: #888780;
+    --gray-800: #2C2C2A;
+    --text-primary: #1a1a18;
+    --text-secondary: #5a5a56;
+    --text-tertiary: #909088;
+    --border: rgba(0,0,0,0.10);
+    --border-md: rgba(0,0,0,0.18);
+    --radius-md: 8px;
+    --radius-lg: 14px;
+    --radius-xl: 20px;
+  }
+
+  body {
+    font-family: 'DM Sans', sans-serif;
+    background: #F4F2ED;
+    min-height: 100vh;
+    display: flex;
+    align-items: flex-start;
+    justify-content: center;
+    padding: 2rem 1rem 4rem;
+  }
+
+  .container {
+    width: 100%;
+    max-width: 640px;
+  }
+
+  /* HEADER */
+  .gp-header {
+    background: white;
+    border: 0.5px solid var(--border);
+    border-radius: var(--radius-xl);
+    padding: 1.75rem 1.75rem 1.5rem;
+    margin-bottom: 1.25rem;
+    box-shadow: 0 1px 4px rgba(0,0,0,0.06);
+  }
+
+  .gp-tag {
+    display: inline-block;
+    font-size: 11px;
+    font-weight: 500;
+    letter-spacing: 0.07em;
+    text-transform: uppercase;
+    background: var(--green-50);
+    color: var(--green-600);
+    border-radius: 20px;
+    padding: 4px 12px;
+    margin-bottom: 1rem;
+    border: 0.5px solid var(--green-100);
+  }
+
+  .gp-header h1 {
+    font-family: 'DM Serif Display', serif;
+    font-size: 22px;
+    font-weight: 400;
+    color: var(--text-primary);
+    line-height: 1.3;
+    margin-bottom: 0.6rem;
+  }
+
+  .gp-header p {
+    font-size: 14px;
+    color: var(--text-secondary);
+    line-height: 1.65;
+  }
+
+  .gp-meta {
+    display: flex;
+    gap: 1.25rem;
+    flex-wrap: wrap;
+    margin-top: 1.25rem;
+    padding-top: 1.25rem;
+    border-top: 0.5px solid var(--border);
+  }
+
+  .gp-meta-item {
+    display: flex;
+    align-items: center;
+    gap: 6px;
+    font-size: 12px;
+    color: var(--text-tertiary);
+  }
+
+  .gp-meta-item svg { width: 14px; height: 14px; stroke: currentColor; fill: none; stroke-width: 1.8; }
+
+  /* PROGRESS */
+  .progress-wrap {
+    background: var(--gray-100);
+    border-radius: 4px;
+    height: 3px;
+    margin-bottom: 1.25rem;
+    overflow: hidden;
+  }
+
+  .progress-fill {
+    height: 100%;
+    background: var(--green-400);
+    border-radius: 4px;
+    transition: width 0.35s ease;
+  }
+
+  /* NAV */
+  .step-nav {
+    display: flex;
+    gap: 6px;
+    margin-bottom: 1.25rem;
+    flex-wrap: wrap;
+  }
+
+  .step-btn {
+    display: flex;
+    align-items: center;
+    gap: 6px;
+    padding: 7px 14px;
+    border: 0.5px solid var(--border-md);
+    border-radius: 20px;
+    background: white;
+    font-family: 'DM Sans', sans-serif;
+    font-size: 13px;
+    color: var(--text-secondary);
+    cursor: pointer;
+    transition: all 0.15s;
+  }
+
+  .step-btn.active {
+    background: var(--green-50);
+    border-color: var(--green-100);
+    color: var(--green-600);
+    font-weight: 500;
+  }
+
+  .step-btn:hover:not(.active) {
+    background: var(--gray-50);
+    color: var(--text-primary);
+  }
+
+  /* PANELS */
+  .panel { display: none; }
+  .panel.active { display: block; }
+
+  /* CARDS */
+  .section-card {
+    background: white;
+    border: 0.5px solid var(--border);
+    border-radius: var(--radius-lg);
+    padding: 1.4rem 1.6rem;
+    margin-bottom: 1rem;
+    box-shadow: 0 1px 3px rgba(0,0,0,0.04);
+  }
+
+  .section-card-accent {
+    border-left: 3px solid var(--green-400);
+    border-radius: 0 var(--radius-lg) var(--radius-lg) 0;
+  }
+
+  .section-label {
+    font-size: 11px;
+    font-weight: 500;
+    letter-spacing: 0.07em;
+    text-transform: uppercase;
+    color: var(--text-tertiary);
+    margin-bottom: 0.65rem;
+  }
+
+  .question-big {
+    font-family: 'DM Serif Display', serif;
+    font-size: 19px;
+    font-weight: 400;
+    color: var(--text-primary);
+    line-height: 1.4;
+    margin-bottom: 0.65rem;
+  }
+
+  .question-sub {
+    font-size: 14px;
+    color: var(--text-secondary);
+    line-height: 1.65;
+  }
+
+  /* CHECKLIST */
+  .checklist-item {
+    display: flex;
+    align-items: flex-start;
+    gap: 12px;
+    padding: 12px 0;
+    border-bottom: 0.5px solid var(--border);
+    font-size: 14px;
+    color: var(--text-primary);
+    line-height: 1.55;
+    cursor: pointer;
+  }
+
+  .checklist-item:last-child { border-bottom: none; }
+
+  .check-box {
+    width: 19px;
+    height: 19px;
+    min-width: 19px;
+    border: 1.5px solid var(--gray-200);
+    border-radius: 5px;
+    margin-top: 2px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: all 0.15s;
+    background: white;
+  }
+
+  .check-box.checked {
+    background: var(--green-400);
+    border-color: var(--green-400);
+  }
+
+  .check-box.checked::after {
+    content: '';
+    width: 9px;
+    height: 5px;
+    border-left: 2px solid white;
+    border-bottom: 2px solid white;
+    transform: rotate(-45deg) translateY(-1px);
+  }
+
+  .context-tag {
+    display: inline-block;
+    font-size: 11px;
+    font-weight: 500;
+    padding: 2px 9px;
+    border-radius: 20px;
+    background: var(--gray-50);
+    color: var(--text-tertiary);
+    margin-bottom: 4px;
+    border: 0.5px solid var(--border);
+  }
+
+  /* FIELDS */
+  .campo-label {
+    font-size: 12px;
+    font-weight: 500;
+    color: var(--text-tertiary);
+    margin-top: 1rem;
+    display: block;
+    margin-bottom: 2px;
+  }
+
+  .fill-field {
+    width: 100%;
+    border: none;
+    border-bottom: 1.5px solid var(--gray-200);
+    background: transparent;
+    font-family: 'DM Sans', sans-serif;
+    font-size: 14px;
+    color: var(--text-primary);
+    padding: 6px 0;
+    outline: none;
+    transition: border-color 0.15s;
+  }
+
+  .fill-field:focus { border-bottom-color: var(--green-400); }
+  .fill-field::placeholder { color: var(--gray-200); }
+
+  /* CONTEXTO BLOCK */
+  .contexto-block {
+    background: var(--gray-50);
+    border: 0.5px solid var(--border);
+    border-radius: var(--radius-md);
+    padding: 1.1rem 1.3rem;
+    margin-bottom: 0.85rem;
+  }
+
+  .contexto-num {
+    font-size: 11px;
+    font-weight: 500;
+    color: var(--green-600);
+    margin-bottom: 0.25rem;
+    letter-spacing: 0.06em;
+    text-transform: uppercase;
+  }
+
+  /* FEEDBACK */
+  .feedback-box {
+    background: var(--green-50);
+    border-left: 3px solid var(--green-400);
+    border-radius: 0 var(--radius-md) var(--radius-md) 0;
+    padding: 1rem 1.25rem;
+    margin-top: 1rem;
+    font-size: 14px;
+    color: var(--text-secondary);
+    line-height: 1.65;
+    display: none;
+  }
+
+  .feedback-box.visible { display: block; }
+
+  /* BUTTONS */
+  .btn-primary {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    background: var(--green-400);
+    color: white;
+    border: none;
+    border-radius: var(--radius-md);
+    padding: 11px 22px;
+    font-family: 'DM Sans', sans-serif;
+    font-size: 14px;
+    font-weight: 500;
+    cursor: pointer;
+    margin-top: 1rem;
+    transition: opacity 0.15s;
+  }
+
+  .btn-primary:hover { opacity: 0.88; }
+
+  .btn-sec {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    background: white;
+    color: var(--text-secondary);
+    border: 0.5px solid var(--border-md);
+    border-radius: var(--radius-md);
+    padding: 11px 22px;
+    font-family: 'DM Sans', sans-serif;
+    font-size: 14px;
+    cursor: pointer;
+    margin-top: 1rem;
+    margin-left: 8px;
+    transition: all 0.15s;
+  }
+
+  .btn-sec:hover { background: var(--gray-50); color: var(--text-primary); }
+
+  /* ROTEIRO */
+  .roteiro-q {
+    display: flex;
+    gap: 14px;
+    align-items: flex-start;
+    padding: 1rem 0;
+    border-bottom: 0.5px solid var(--border);
+  }
+
+  .roteiro-q:last-child { border-bottom: none; }
+
+  .roteiro-letra {
+    width: 28px;
+    height: 28px;
+    min-width: 28px;
+    border-radius: 50%;
+    background: var(--gray-50);
+    border: 0.5px solid var(--border-md);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 12px;
+    font-weight: 500;
+    color: var(--text-secondary);
+  }
+
+  .roteiro-pergunta {
+    font-size: 13px;
+    font-weight: 500;
+    color: var(--text-primary);
+    margin-bottom: 8px;
+    line-height: 1.4;
+  }
+
+  .roteiro-resp {
+    font-size: 13px;
+    color: var(--text-secondary);
+    line-height: 1.65;
+    background: var(--gray-50);
+    border-radius: var(--radius-md);
+    padding: 10px 13px;
+  }
+
+  /* ARROW ICON */
+  .arrow-r { display:inline-block; margin-left:2px; }
+  .arrow-l { display:inline-block; margin-right:2px; }
+</style>
+</head>
+<body>
+<div class="container">
+
+  <div class="gp-header">
+    <div class="gp-tag">Etapa 1 — Ativação</div>
+    <h1>Onde você já ouviu essa pergunta?</h1>
+    <p>Um guia para você reconhecer e mapear os contextos em que a dúvida <em>"Por que aprender se a IA já faz?"</em> apareceu na sua trajetória.</p>
+    <div class="gp-meta">
+      <div class="gp-meta-item">
+        <svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>
+        10 a 15 minutos
+      </div>
+      <div class="gp-meta-item">
+        <svg viewBox="0 0 24 24"><path d="M12 20h9"/><path d="M16.5 3.5a2.121 2.121 0 0 1 3 3L7 19l-4 1 1-4L16.5 3.5z"/></svg>
+        Atividade reflexiva
+      </div>
+      <div class="gp-meta-item">
+        <svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"/><line x1="12" y1="8" x2="12" y2="12"/><line x1="12" y1="16" x2="12.01" y2="16"/></svg>
+        Objetivo 1 — Compreender
+      </div>
+    </div>
+  </div>
+
+  <div class="progress-wrap">
+    <div class="progress-fill" id="progressBar" style="width: 25%"></div>
+  </div>
+
+  <div class="step-nav">
+    <button class="step-btn active" onclick="goTo(0, this)">1 · Ponto de partida</button>
+    <button class="step-btn" onclick="goTo(1, this)">2 · Reconheça os contextos</button>
+    <button class="step-btn" onclick="goTo(2, this)">3 · Meu mapa</button>
+  </div>
+
+  <!-- PAINEL 0 -->
+  <div class="panel active" id="panel-0">
+    <div class="section-card section-card-accent">
+      <div class="section-label">Pergunta provocativa</div>
+      <div class="question-big">"Você já ouviu isso? Em que momento?"</div>
+      <div class="question-sub">Antes de começar, reflita: você já se perguntou — ou ouviu alguém perguntar — se ainda faz sentido aprender programação com a IA disponível hoje?</div>
+    </div>
+    <div class="section-card">
+      <div class="section-label">O que você vai fazer nesta etapa</div>
+      <p style="font-size:14px; color:var(--text-primary); line-height:1.7;">
+        Você vai mapear os contextos em que essa dúvida apareceu. Não há resposta certa ou errada — o objetivo é nomear o que você já sente, antes de analisar qualquer coisa.<br><br>
+        <strong style="font-weight:500;">Resultado esperado:</strong> ao final, você terá um Mapa de Contextos próprio, com 2 a 3 situações reais da sua trajetória.
+      </p>
+    </div>
+    <button class="btn-primary" onclick="goTo(1, document.querySelectorAll('.step-btn')[1])">
+      Começar <span class="arrow-r">→</span>
+    </button>
+  </div>
+
+  <!-- PAINEL 1 -->
+  <div class="panel" id="panel-1">
+    <div class="section-card">
+      <div class="section-label">Em quais destes cenários você se reconhece?</div>
+      <p style="font-size:13px; color:var(--text-secondary); margin-bottom:1rem; line-height:1.55;">Marque todos os que se aplicam à sua experiência. Seja honesto — ninguém vai ver suas respostas.</p>
+      <div>
+        <div class="checklist-item" onclick="toggleCheck(this)">
+          <div class="check-box"></div>
+          <div><span class="context-tag">Academia</span><br>Em aula ou projeto, pensei: <em>"Para que fazer isso manualmente se existe biblioteca pronta?"</em></div>
+        </div>
+        <div class="checklist-item" onclick="toggleCheck(this)">
+          <div class="check-box"></div>
+          <div><span class="context-tag">Processo seletivo</span><br>Fiquei inseguro sobre o que estudar porque não sabia o que ainda importa para o mercado.</div>
+        </div>
+        <div class="checklist-item" onclick="toggleCheck(this)">
+          <div class="check-box"></div>
+          <div><span class="context-tag">Fórum / comunidade online</span><br>Li uma publicação dizendo que <em>"a IA já escreve código melhor que iniciantes"</em> e fiquei paralisado.</div>
+        </div>
+        <div class="checklist-item" onclick="toggleCheck(this)">
+          <div class="check-box"></div>
+          <div><span class="context-tag">Workshop ou curso</span><br>O instrutor ou alguém presente levantou a dúvida sobre a relevância do que estava sendo ensinado.</div>
+        </div>
+        <div class="checklist-item" onclick="toggleCheck(this)">
+          <div class="check-box"></div>
+          <div><span class="context-tag">Decisão de carreira</span><br>Cheguei a repensar minha escolha profissional por causa de notícias sobre IA substituindo programadores.</div>
+        </div>
+        <div class="checklist-item" onclick="toggleCheck(this)">
+          <div class="check-box"></div>
+          <div><span class="context-tag">Conversa informal</span><br>Um colega, amigo ou familiar questionou se ainda vale a pena me especializar em tecnologia.</div>
+        </div>
+      </div>
+    </div>
+    <button class="btn-primary" onclick="goTo(2, document.querySelectorAll('.step-btn')[2])">
+      Continuar <span class="arrow-r">→</span>
+    </button>
+    <button class="btn-sec" onclick="goTo(0, document.querySelectorAll('.step-btn')[0])">
+      <span class="arrow-l">←</span> Voltar
+    </button>
+  </div>
+
+  <!-- PAINEL 2 -->
+  <div class="panel" id="panel-2">
+    <div class="section-card">
+      <div class="section-label">Microproduto 1 — Meu mapa de contextos</div>
+      <p style="font-size:13px; color:var(--text-secondary); margin-bottom:1.25rem; line-height:1.55;">Escolha 2 ou 3 situações reais. Descreva com seus próprios detalhes — não é necessário usar linguagem formal.</p>
+
+      <div class="contexto-block">
+        <div class="contexto-num">Contexto 1</div>
+        <span class="campo-label">Onde aconteceu?</span>
+        <input type="text" class="fill-field" placeholder="Ex: aula de Estruturas de Dados, 2º período" />
+        <span class="campo-label">Quando percebi a dúvida?</span>
+        <input type="text" class="fill-field" placeholder="Ex: quando a professora pediu para implementar um algoritmo de ordenação" />
+        <span class="campo-label">Uma palavra para o sentimento que tive</span>
+        <input type="text" class="fill-field" placeholder="Ex: confusão, desânimo, curiosidade..." />
+        <span class="campo-label">Consequência para meu aprendizado</span>
+        <input type="text" class="fill-field" placeholder="Ex: comecei a questionar se programação ainda era relevante" />
+      </div>
+
+      <div class="contexto-block">
+        <div class="contexto-num">Contexto 2</div>
+        <span class="campo-label">Onde aconteceu?</span>
+        <input type="text" class="fill-field" placeholder="Ex: fórum online, Discord, artigo no LinkedIn" />
+        <span class="campo-label">Quando percebi a dúvida?</span>
+        <input type="text" class="fill-field" placeholder="Ex: ao ler que 'ChatGPT escreve código melhor que iniciantes'" />
+        <span class="campo-label">Uma palavra para o sentimento que tive</span>
+        <input type="text" class="fill-field" placeholder="Ex: insegurança, paralisia, raiva..." />
+        <span class="campo-label">Consequência para meu aprendizado</span>
+        <input type="text" class="fill-field" placeholder="Ex: pausei os estudos por alguns dias" />
+      </div>
+
+      <div class="contexto-block">
+        <div class="contexto-num">Contexto 3 (opcional)</div>
+        <span class="campo-label">Onde aconteceu?</span>
+        <input type="text" class="fill-field" placeholder="Ex: conversa com colega, entrevista técnica..." />
+        <span class="campo-label">Quando percebi a dúvida?</span>
+        <input type="text" class="fill-field" placeholder="Descreva a situação" />
+        <span class="campo-label">Uma palavra para o sentimento que tive</span>
+        <input type="text" class="fill-field" placeholder="Ex: vergonha, surpresa, alívio..." />
+        <span class="campo-label">Consequência para meu aprendizado</span>
+        <input type="text" class="fill-field" placeholder="O que mudou ou deixou de mudar?" />
+      </div>
+    </div>
+
+    <button class="btn-primary" onclick="finalizar()">
+      Finalizar mapa ✓
+    </button>
+    <button class="btn-sec" onclick="goTo(1, document.querySelectorAll('.step-btn')[1])">
+      <span class="arrow-l">←</span> Voltar
+    </button>
+
+    <div class="feedback-box" id="feedbackBox">
+      <strong style="font-weight:500; color:#085041;">Ótimo — você mapeou seus contextos.</strong><br><br>
+      Agora você tem algo concreto: situações reais, sentimentos nomeados e consequências observadas. Na próxima etapa, vamos entender por que essa dúvida surge — e como separar ruído externo de lacunas genuínas de formação.
+    </div>
+  </div>
+
+</div>
+
+<script>
+  function goTo(idx, btn) {
+    document.querySelectorAll('.panel').forEach(function(p, i) {
+      p.classList.toggle('active', i === idx);
+    });
+    document.querySelectorAll('.step-btn').forEach(function(b, i) {
+      b.classList.toggle('active', i === idx);
+    });
+    var pct = [34, 67, 100];
+    document.getElementById('progressBar').style.width = pct[idx] + '%';
+    window.scrollTo({ top: 0, behavior: 'smooth' });
+  }
+
+  function toggleCheck(item) {
+    var box = item.querySelector('.check-box');
+    box.classList.toggle('checked');
+  }
+
+  function finalizar() {
+    var fb = document.getElementById('feedbackBox');
+    fb.classList.add('visible');
+    fb.scrollIntoView({ behavior: 'smooth', block: 'nearest' });
+  }
+</script>
+</body>
+</html>
