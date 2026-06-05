@@ -445,6 +445,13 @@
     padding: 10px 13px;
   }
 
+  .btn-row {
+    display: flex;
+    justify-content: space-between;
+    gap: 8px;
+    margin-top: 1rem;
+  }
+
   /* ARROW ICON */
   .arrow-r { display:inline-block; margin-left:2px; }
   .arrow-l { display:inline-block; margin-right:2px; }
@@ -559,12 +566,14 @@
         </div>
       </div>
     </div>
-    <button class="btn-primary" onclick="goTo(2, document.querySelectorAll('.step-btn')[2])">
-      Continuar <span class="arrow-r">→</span>
-    </button>
-    <button class="btn-sec" onclick="goTo(0, document.querySelectorAll('.step-btn')[0])">
-      <span class="arrow-l">←</span> Voltar
-    </button>
+    <div class="btn-row">
+      <button class="btn-sec" onclick="goTo(0, document.querySelectorAll('.step-btn')[0])">
+        <span class="arrow-l">←</span> Voltar
+      </button>
+      <button class="btn-primary" onclick="goTo(2, document.querySelectorAll('.step-btn')[2])">
+        Continuar <span class="arrow-r">→</span>
+      </button>
+    </div>
   </div>
 
   <!-- PAINEL 2 -->
@@ -576,50 +585,51 @@
       <div class="contexto-block">
         <div class="contexto-num">Contexto 1</div>
         <span class="campo-label">Onde aconteceu?</span>
-        <input type="text" class="fill-field" placeholder="Ex: aula de Estruturas de Dados, 2º período" />
+        <input id="c1_onde" type="text" class="fill-field" placeholder="Ex: aula de Estruturas de Dados, 2º período" />
         <span class="campo-label">Quando percebi a dúvida?</span>
-        <input type="text" class="fill-field" placeholder="Ex: quando a professora pediu para implementar um algoritmo de ordenação" />
+        <input id="c1_quando" type="text" class="fill-field" placeholder="Ex: quando a professora pediu para implementar um algoritmo de ordenação" />
         <span class="campo-label">Uma palavra para o sentimento que tive</span>
-        <input type="text" class="fill-field" placeholder="Ex: confusão, desânimo, curiosidade..." />
+        <input id="c1_sentimento" type="text" class="fill-field" placeholder="Ex: confusão, desânimo, curiosidade..." />
         <span class="campo-label">Consequência para meu aprendizado</span>
-        <input type="text" class="fill-field" placeholder="Ex: comecei a questionar se programação ainda era relevante" />
+        <input id="c1_consequencia" type="text" class="fill-field" placeholder="Ex: comecei a questionar se programação ainda era relevante" />
       </div>
 
       <div class="contexto-block">
         <div class="contexto-num">Contexto 2</div>
         <span class="campo-label">Onde aconteceu?</span>
-        <input type="text" class="fill-field" placeholder="Ex: fórum online, Discord, artigo no LinkedIn" />
+        <input id="c2_onde" type="text" class="fill-field" placeholder="Ex: fórum online, Discord, artigo no LinkedIn" />
         <span class="campo-label">Quando percebi a dúvida?</span>
-        <input type="text" class="fill-field" placeholder="Ex: ao ler que 'ChatGPT escreve código melhor que iniciantes'" />
+        <input id="c2_quando" type="text" class="fill-field" placeholder="Ex: ao ler que 'ChatGPT escreve código melhor que iniciantes'" />
         <span class="campo-label">Uma palavra para o sentimento que tive</span>
-        <input type="text" class="fill-field" placeholder="Ex: insegurança, paralisia, raiva..." />
+        <input id="c2_sentimento" type="text" class="fill-field" placeholder="Ex: insegurança, paralisia, raiva..." />
         <span class="campo-label">Consequência para meu aprendizado</span>
-        <input type="text" class="fill-field" placeholder="Ex: pausei os estudos por alguns dias" />
+        <input id="c2_consequencia" type="text" class="fill-field" placeholder="Ex: pausei os estudos por alguns dias" />
       </div>
 
       <div class="contexto-block">
         <div class="contexto-num">Contexto 3 (opcional)</div>
         <span class="campo-label">Onde aconteceu?</span>
-        <input type="text" class="fill-field" placeholder="Ex: conversa com colega, entrevista técnica..." />
+        <input id="c3_onde" type="text" class="fill-field" placeholder="Ex: conversa com colega, entrevista técnica..." />
         <span class="campo-label">Quando percebi a dúvida?</span>
-        <input type="text" class="fill-field" placeholder="Descreva a situação" />
+        <input id="c3_quando" type="text" class="fill-field" placeholder="Descreva a situação" />
         <span class="campo-label">Uma palavra para o sentimento que tive</span>
-        <input type="text" class="fill-field" placeholder="Ex: vergonha, surpresa, alívio..." />
+        <input id="c3_sentimento" type="text" class="fill-field" placeholder="Ex: vergonha, surpresa, alívio..." />
         <span class="campo-label">Consequência para meu aprendizado</span>
-        <input type="text" class="fill-field" placeholder="O que mudou ou deixou de mudar?" />
+        <input id="c3_consequencia" type="text" class="fill-field" placeholder="O que mudou ou deixou de mudar?" />
       </div>
     </div>
 
-    <button class="btn-primary" onclick="finalizar()">
-      Finalizar mapa ✓
-    </button>
-    <button class="btn-sec" onclick="goTo(1, document.querySelectorAll('.step-btn')[1])">
-      <span class="arrow-l">←</span> Voltar
-    </button>
+    <div class="btn-row">
+      <button class="btn-sec" onclick="goTo(1, document.querySelectorAll('.step-btn')[1])">
+        <span class="arrow-l">←</span> Voltar
+      </button>
+      <button class="btn-primary" onclick="finalizar()">
+        Finalizar mapa ✓
+      </button>
+    </div>
 
     <div class="feedback-box" id="feedbackBox">
-      <strong style="font-weight:500; color:#3D0950;">Ótimo — você mapeou seus contextos.</strong><br><br>
-      Agora você tem algo concreto: situações reais, sentimentos nomeados e consequências observadas. Na próxima etapa, vamos entender por que essa dúvida surge — e como separar ruído externo de lacunas genuínas de formação.
+      <div id="feedbackConteudo"></div>
     </div>
   </div>
 
@@ -649,6 +659,87 @@
   }
 
   function finalizar() {
+    // — Coleta checklist —
+    var checkItems = document.querySelectorAll('#panel-1 .checklist-item');
+    var marcados = [];
+    checkItems.forEach(function(item) {
+      if (item.querySelector('.check-box.checked')) {
+        var tag = item.querySelector('.context-tag');
+        if (tag) marcados.push(tag.textContent.trim());
+      }
+    });
+
+    // — Coleta campos do mapa —
+    function val(id) { return (document.getElementById(id).value || '').trim(); }
+
+    var contextos = [
+      { onde: val('c1_onde'), sentimento: val('c1_sentimento'), consequencia: val('c1_consequencia') },
+      { onde: val('c2_onde'), sentimento: val('c2_sentimento'), consequencia: val('c2_consequencia') },
+      { onde: val('c3_onde'), sentimento: val('c3_sentimento'), consequencia: val('c3_consequencia') }
+    ].filter(function(c) { return c.onde || c.sentimento; });
+
+    // — Monta partes do feedback —
+    var html = '';
+
+    // Saudação + reconhecimento do que foi registrado
+    html += '<strong style="font-weight:500; color:#3D0950;">Mapa recebido.</strong><br><br>';
+
+    // Contextos do checklist
+    if (marcados.length > 0) {
+      var listaMarcados = marcados.length === 1
+        ? '<strong>' + marcados[0] + '</strong>'
+        : marcados.slice(0, -1).map(function(m) { return '<strong>' + m + '</strong>'; }).join(', ')
+          + ' e <strong>' + marcados[marcados.length - 1] + '</strong>';
+      html += 'Você se reconheceu em ' + marcados.length + ' cenário' + (marcados.length > 1 ? 's' : '') + ': ' + listaMarcados + '. ';
+    }
+
+    // Locais do mapa
+    var locais = contextos.map(function(c) { return c.onde; }).filter(Boolean);
+    if (locais.length > 0) {
+      var listaLocais = locais.length === 1
+        ? '<em>' + locais[0] + '</em>'
+        : locais.slice(0, -1).map(function(l) { return '<em>' + l + '</em>'; }).join(', ')
+          + ' e <em>' + locais[locais.length - 1] + '</em>';
+      html += 'No seu mapa, você situou essa dúvida em ' + listaLocais + '. ';
+    }
+
+    // Sentimentos + consequências por contexto
+    var temSentOuCons = contextos.some(function(c) { return c.sentimento || c.consequencia; });
+    if (temSentOuCons) {
+      html += '<br>';
+      contextos.forEach(function(c, i) {
+        if (!c.sentimento && !c.consequencia) return;
+        html += '<div style="margin-top:0.6rem; padding:0.7rem 0.9rem; background:rgba(96,16,125,0.05); border-radius:6px; font-size:13px; line-height:1.6;">';
+        html += '<span style="font-size:11px; text-transform:uppercase; letter-spacing:0.06em; color:#6B1189; font-weight:500;">Contexto ' + (i + 1) + (c.onde ? ' — ' + c.onde : '') + '</span><br>';
+        if (c.sentimento) html += 'Sentimento: <strong>' + c.sentimento + '</strong>';
+        if (c.sentimento && c.consequencia) html += '<br>';
+        if (c.consequencia) html += 'Consequência: <em>' + c.consequencia + '</em>';
+        html += '</div>';
+      });
+    }
+
+    html += '<br>';
+
+    // Convite à reflexão
+    html += 'Isso é dado concreto — não é fraqueza, é autoconhecimento.<br><br>';
+    html += 'Antes de avançar, releia o que você escreveu. ';
+    html += 'Você consegue identificar de onde veio essa insegurança? ';
+    html += 'Ela apareceu mais em contextos externos — notícias, opiniões, pressão do mercado — ';
+    html += 'ou em situações de prática real, dentro do seu próprio processo de aprender?<br><br>';
+
+    // Convite a continuar
+    html += '<span style="color:#3D0950; font-weight:500;">Guarde essa percepção.</span> ';
+    html += 'Ela é o fio condutor da próxima etapa — onde você vai entender por que essa insegurança surge e aprender a separar o ruído externo das lacunas reais de formação.';
+
+    // Caso nada tenha sido preenchido
+    if (marcados.length === 0 && contextos.length === 0) {
+      html = '<strong style="font-weight:500; color:#3D0950;">Mapa recebido.</strong><br><br>';
+      html += 'Parece que você ainda não preencheu os campos — sem problema. ';
+      html += 'Volte e registre pelo menos um contexto real: é esse registro que vai tornar a próxima etapa significativa para você.<br><br>';
+      html += 'Quando estiver pronto, finalize novamente.';
+    }
+
+    document.getElementById('feedbackConteudo').innerHTML = html;
     var fb = document.getElementById('feedbackBox');
     fb.classList.add('visible');
     fb.scrollIntoView({ behavior: 'smooth', block: 'nearest' });
