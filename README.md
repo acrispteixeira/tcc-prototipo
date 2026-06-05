@@ -21,9 +21,11 @@ Um guia prático interativo com 3 seções navegáveis: ponto de partida (pergun
 
 ### c) Quais objetivos específicos ele atende?
 
-Prepara o **Objetivo 1 (Compreender — Explicar)**: o estudante começa a descrever, com suas próprias palavras, em que contextos sente insegurança epistemológica, quando ela surge e como se manifesta em suas decisões de aprendizado.
+**Objetivo 1 — Compreender (nível cognitivo: Compreender — Bloom revisado)**
 
-Verbos de Bloom trabalhados nesta etapa: **Identificar, Descrever, Exemplificar.**
+> Descrever, com linguagem própria, os contextos situados em que a insegurança epistemológica se manifestou em sua trajetória de aprendizado.
+
+O Mapa de Contextos é o microproduto que evidencia o alcance deste objetivo: o estudante registra onde a insegurança surgiu, quando aconteceu, o sentimento associado e a consequência para o próprio aprendizado — elementos que só podem ser preenchidos a partir da experiência vivida.
 
 ---
 
@@ -35,7 +37,7 @@ Verbos de Bloom trabalhados nesta etapa: **Identificar, Descrever, Exemplificar.
 
 **Campos ancorados em experiência biográfica:** cada campo do Mapa de Contextos exige detalhe situacional (quando, onde, sentimento, consequência), o que dificulta a delegação acrítica a ferramentas de IA generativa — uma IA não possui o histórico vivido do estudante.
 
-**Feedback imediato ao finalizar o mapa:** cria ponte motivacional para a etapa seguinte (Exploração), encerrando a ativação com senso de conclusão e curiosidade ativada.
+**Feedback responsivo ao finalizar o mapa:** ao clicar em "Finalizar mapa", o estudante recebe uma devolutiva gerada a partir do que ele próprio registrou — citando os cenários marcados no checklist, os locais que descreveu, e exibindo, por contexto, o sentimento nomeado e a consequência para o aprendizado exatamente como foram escritos. Essa escolha é coerente com o Objetivo 1: a consequência é o campo que evidencia como a insegurança se manifesta nas decisões de aprendizado, e devolvê-la ao estudante torna visível que esse dado foi recebido e tem peso. A mensagem encerra com uma pergunta reflexiva sobre a origem da insegurança — contexto externo ou prática real — e um convite explícito a avançar para a etapa de Exploração, criando ponte motivacional e cognitiva entre as duas etapas.
 
 ---
 
