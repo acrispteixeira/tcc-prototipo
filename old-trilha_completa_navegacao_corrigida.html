@@ -8,7 +8,7 @@
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,400;0,9..40,500;1,9..40,400&family=DM+Serif+Display&display=swap" rel="stylesheet">
 <style>
-  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; align-items: center;}
+  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
 
   :root {
     --green-50: #F3E8F7;
@@ -705,17 +705,23 @@
   <div class="trilha-header">
     <div class="trilha-titulo">Trilha de Autonomia e Discernimento Crítico</div>
     <div class="trilha-sub">Formação complementar autoguiada — percurso completo em 4 etapas:</div>
+    <div class="trilha-fluxo">
+      <span class="fluxo-item active">Ativação</span>
+      <span class="fluxo-sep">→</span>
+      <span class="fluxo-item">Exploração</span>
+      <span class="fluxo-sep">→</span>
+      <span class="fluxo-item">Aplicação</span>
+      <span class="fluxo-sep">→</span>
+      <span class="fluxo-item">Consolidação</span>
+    </div>
   </div>
 
   <!-- NAVEGAÇÃO GLOBAL ENTRE ETAPAS -->
   <div class="etapa-nav" id="etapaNav">
-    <button class="etapa-btn active" onclick="irParaEtapa(1, this)" id="btnEtapa1" disabled>Ativação</button>
-    <span class="fluxo-sep">→</span>
-    <button class="etapa-btn" onclick="irParaEtapa(2, this)" id="btnEtapa2" disabled>Exploração</button>
-    <span class="fluxo-sep">→</span>
-    <button class="etapa-btn" onclick="irParaEtapa(3, this)" id="btnEtapa3" disabled>Aplicação</button>
-    <span class="fluxo-sep">→</span>
-    <button class="etapa-btn" onclick="irParaEtapa(4, this)" id="btnEtapa4" disabled>Consolidação</button>
+    <button class="etapa-btn active" onclick="irParaEtapa(1, this)">① Ativação</button>
+    <button class="etapa-btn" onclick="irParaEtapa(2, this)" id="btnEtapa2" disabled>② Exploração</button>
+    <button class="etapa-btn" onclick="irParaEtapa(3, this)" id="btnEtapa3" disabled>③ Aplicação</button>
+    <button class="etapa-btn" onclick="irParaEtapa(4, this)" id="btnEtapa4" disabled>④ Consolidação</button>
   </div>
 
   <!-- PROGRESSO GLOBAL -->
@@ -858,32 +864,18 @@
       </div>
     </div>
 
-    <div class="btn-row" id="botoesMapa">
-  <button class="btn-sec"
-          onclick="goTo(1, document.querySelectorAll('#stepNav1 .step-btn')[1])">
-    <span class="arrow-l">←</span> Voltar
-  </button>
+    <div class="btn-row">
+      <button class="btn-sec" onclick="goTo(1, document.querySelectorAll('#stepNav1 .step-btn')[1])">
+        <span class="arrow-l">←</span> Voltar
+      </button>
+      <button class="btn-primary" onclick="finalizar()">
+        Finalizar mapa ✓
+      </button>
+    </div>
 
-  <button class="btn-primary" onclick="finalizar()">
-    Finalizar mapa ✓
-  </button>
-  </div>
-
-  <div class="feedback-box" id="feedbackBox">
-    <div id="feedbackConteudo"></div>
-  </div>
-
-  <div class="btn-row" id="botoesPosFeedback" style="display:none;">
-    <button class="btn-sec"
-            onclick="goTo(1, document.querySelectorAll('#stepNav1 .step-btn')[1])">
-      <span class="arrow-l">←</span> Voltar
-    </button>
-
-    <button class="btn-primary"
-            onclick="irParaEtapa(2, document.getElementById('btnEtapa2'))">
-      Evoluir para próxima etapa →
-    </button>
-  </div>
+    <div class="feedback-box" id="feedbackBox">
+      <div id="feedbackConteudo"></div>
+    </div>
   </div>
 
   </div><!-- /etapa-1 -->
@@ -1086,32 +1078,12 @@
           </tbody>
         </table>
       </div>
-      <div class="btn-row" id="botoesExploracao">
-        <button class="btn-sec"
-                onclick="goTo2(2, document.querySelectorAll('#stepNav2 .step-btn')[2])">
-          <span class="arrow-l">←</span> Voltar
-        </button>
-
-        <button class="btn-primary"
-                onclick="finalizarExploracao()">
-          Finalizar Exploração ✓
-        </button>
+      <div class="btn-row">
+        <button class="btn-sec" onclick="goTo2(2, document.querySelectorAll('#stepNav2 .step-btn')[2])">← Voltar</button>
+        <button class="btn-primary" onclick="finalizarExploracao()">Finalizar Exploração ✓</button>
       </div>
-
       <div class="feedback-box" id="feedbackExploracao">
         <div id="feedbackExploracaoConteudo"></div>
-      </div>
-
-      <div class="btn-row" id="botoesPosExploracao" style="display:none;">
-        <button class="btn-sec"
-                onclick="goTo2(2, document.querySelectorAll('#stepNav2 .step-btn')[2])">
-          <span class="arrow-l">←</span> Voltar
-        </button>
-
-        <button class="btn-primary"
-                onclick="irParaEtapa(3, document.getElementById('btnEtapa3'))">
-          Evoluir para próxima etapa →
-        </button>
       </div>
     </div>
 
@@ -1313,32 +1285,12 @@
           <textarea class="fill-textarea" id="diag_proximo" placeholder="Ex: vou retomar os exercícios de algoritmos sem usar IA por 30 dias para mapear onde estão minhas lacunas reais..."></textarea>
         </div>
       </div>
-      <div class="btn-row" id="botoesAplicacao">
-        <button class="btn-sec"
-                onclick="goTo3(2, document.querySelectorAll('#stepNav3 .step-btn')[2])">
-          <span class="arrow-l">←</span> Voltar
-        </button>
-
-        <button class="btn-primary"
-                onclick="finalizarAplicacao()">
-          Finalizar diagnóstico ✓
-        </button>
+      <div class="btn-row">
+        <button class="btn-sec" onclick="goTo3(2, document.querySelectorAll('#stepNav3 .step-btn')[2])">← Voltar</button>
+        <button class="btn-primary" onclick="finalizarAplicacao()">Finalizar diagnóstico ✓</button>
       </div>
-
       <div class="feedback-box" id="feedbackAplicacao">
         <div id="feedbackAplicacaoConteudo"></div>
-      </div>
-
-      <div class="btn-row" id="botoesPosAplicacao" style="display:none;">
-        <button class="btn-sec"
-                onclick="goTo3(2, document.querySelectorAll('#stepNav3 .step-btn')[2])">
-          <span class="arrow-l">←</span> Voltar
-        </button>
-
-        <button class="btn-primary"
-                onclick="irParaEtapa(4, document.getElementById('btnEtapa4'))">
-          Evoluir para próxima etapa →
-        </button>
       </div>
     </div>
 
@@ -1598,14 +1550,7 @@
     document.getElementById('feedbackConteudo').innerHTML = html;
     var fb = document.getElementById('feedbackBox');
     fb.classList.add('visible');
-    document.getElementById('botoesMapa').style.display = 'none';
-    document.getElementById('botoesPosFeedback').style.display = 'flex';
     fb.scrollIntoView({ behavior: 'smooth', block: 'nearest' });
-    document.getElementById('feedbackBox')
-            .classList.add('visible');
-
-    document.getElementById('botoesMapa').style.display = 'none';
-    document.getElementById('botoesPosFeedback').style.display = 'flex';
   }
 
   /* ─── ETAPA 2 — painéis internos ─── */
@@ -1627,28 +1572,20 @@
     var classificados = 0;
     selects.forEach(function(s){ if (s.value) classificados++; });
 
-    var html = '';
+    var html = '<strong style="font-weight:500; color:#3D0950;">Exploração concluída.</strong><br><br>';
     if (classificados === 0) {
       html += 'Você ainda não classificou nenhuma afirmação na Tabela. Volte e preencha pelo menos algumas — a classificação é o que vai ancorar o julgamento crítico na próxima etapa.<br><br>Quando estiver pronto, finalize novamente.';
     } else {
-      html += '<strong style="font-weight:500; color:#3D0950;">Exploração concluída.</strong><br><br>';
-      html += 'Você classificou <strong>' + classificados + ' afirmaç' + (classificados > 1 ? 'ões' : 'ão') + '</strong> na Tabela Mito vs. Realidade. ';
+      html += 'Você classificou <strong>' + classificados + ' afirmação' + (classificados > 1 ? 'ões' : '') + '</strong> na Tabela Mito vs. Realidade. ';
       html += 'Esse repertório é o que vai diferenciar sua avaliação de uma opinião vaga para um julgamento com base em evidências.<br><br>';
       html += 'Na próxima etapa, você vai usar exatamente isso para avaliar sua própria situação — contexto a contexto, com os critérios que você acabou de construir.<br><br>';
       html += '<span style="color:#3D0950;font-weight:500;">Continue para a Aplicação.</span>';
-      document.getElementById('feedbackExploracao')
-            .classList.add('visible');
-
-      // NOVAS LINHAS
-      document.getElementById('botoesExploracao').style.display = 'none';
-      document.getElementById('botoesPosExploracao').style.display = 'flex';
       desbloquearEtapa(3);
     }
     document.getElementById('feedbackExploracaoConteudo').innerHTML = html;
     var fb = document.getElementById('feedbackExploracao');
     fb.classList.add('visible');
     fb.scrollIntoView({ behavior: 'smooth', block: 'nearest' });
-
   }
 
   /* ─── ETAPA 3 — painéis internos ─── */
@@ -1678,12 +1615,11 @@
     var ev1 = val('diag_ev1'), ev2 = val('diag_ev2'), ev3 = val('diag_ev3');
     var proximo = val('diag_proximo');
 
-    var html = '';
+    var html = '<strong style="font-weight:500; color:#3D0950;">Diagnóstico registrado.</strong><br><br>';
 
     if (!diagFinal && !ev1 && !ev2 && !proximo) {
       html += 'Preencha ao menos a classificação e o próximo passo concreto antes de finalizar — são esses campos que vão alimentar seu Plano na última etapa.<br><br>Quando estiver pronto, finalize novamente.';
     } else {
-      html += '<strong style="font-weight:500; color:#3D0950;">Diagnóstico registrado.</strong><br><br>';
       if (diagFinal) {
         var labels = { externo: 'ruído externo', lacuna: 'lacuna real de formação', ambos: 'uma combinação de ruído externo e lacuna real' };
         html += 'Você identificou que sua insegurança é principalmente <strong>' + (labels[diagFinal.value] || diagFinal.value) + '</strong>. ';
@@ -1700,42 +1636,11 @@
       html += 'Esse diagnóstico é o insumo direto do seu Plano Pessoal de Aprendizagem. Você não vai construir um plano genérico — vai construir um plano <em>seu</em>, baseado no que acabou de nomear.<br><br>';
       html += '<span style="color:#3D0950;font-weight:500;">Continue para a Consolidação.</span>';
       desbloquearEtapa(4);
-
-      document.getElementById('feedbackAplicacaoConteudo').innerHTML = html;
-
-      var fb = document.getElementById('feedbackAplicacao');
-      fb.classList.add('visible');
-
-      var botoesOriginais = document.getElementById('botoesAplicacao');
-      var botoesPos = document.getElementById('botoesPosAplicacao');
-
-      if (botoesOriginais) {
-        botoesOriginais.style.display = 'none';
-      }
-
-      if (botoesPos) {
-        botoesPos.style.display = 'flex';
-      }
-      concluirAplicacao();
-      fb.scrollIntoView({
-        behavior: 'smooth',
-        block: 'nearest'
-      });
     }
     document.getElementById('feedbackAplicacaoConteudo').innerHTML = html;
     var fb = document.getElementById('feedbackAplicacao');
     fb.classList.add('visible');
     fb.scrollIntoView({ behavior: 'smooth', block: 'nearest' });
-  }
-
-  function concluirAplicacao() {
-    const btnEtapa3 = document.getElementById('btnEtapa3');
-    const btnEtapa4 = document.getElementById('btnEtapa4');
-
-    // etapa atual concluída
-    btnEtapa3.classList.remove('active');
-    btnEtapa3.classList.add('done');
-    btnEtapa3.disabled = true;
   }
 
   /* ─── ETAPA 4 — painéis internos ─── */
