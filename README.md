@@ -1,48 +1,133 @@
-# TCC - Especialização em Linguagem e Tecnologia - FALE/UFMG - 2026/1
+# Por que aprender se a IA já faz?
 
-## Disciplinas: Elaboração de Conteúdos Didáticos Digitais e Produção de Conteúdos Didáticos Digitais
-
-### "Por que aprender se a IA já faz?": uma trilha de autonomia e discernimento crítico para estudantes de tecnologia em contexto de inteligência artificial generativa
+Uma trilha interativa de aprendizagem voltada para estudantes de tecnologia que desejam desenvolver autonomia, confiança e pensamento crítico diante do avanço da Inteligência Artificial Generativa.
 
 ---
 
-## Roteiro do protótipo
+## Sobre o projeto
 
-### a) O que é este protótipo? Descreva o que foi criado e em que formato.
+Este produto educacional foi desenvolvido como parte do Trabalho de Conclusão de Curso da Especialização em Linguagem e Tecnologia da Faculdade de Letras da UFMG.
 
-Um guia prático interativo com 3 seções navegáveis: ponto de partida (pergunta provocativa), reconhecimento de contextos (checklist de cenários) e preenchimento do Mapa de Contextos (campos reflexivos estruturados). Formato visual navegável publicado em HTML, simulando um material interativo com navegação por etapas — acessível via link direto, sem necessidade de login ou instalação.
+A proposta surge a partir de uma dúvida cada vez mais presente entre estudantes e profissionais iniciantes da área de tecnologia:
 
----
+> "Se a IA já gera código, resolve problemas e responde perguntas, por que eu ainda preciso aprender?"
 
-### b) Qual etapa do percurso ele representa?
-
-**Ativação** — primeira etapa da trilha, responsável por mobilizar conhecimento prévio, gerar identificação e reduzir defensivas antes de qualquer conteúdo conceitual.
+A trilha busca ajudar o estudante a diferenciar inseguranças geradas por narrativas sensacionalistas do mercado de lacunas reais de aprendizagem, promovendo decisões mais conscientes sobre seu desenvolvimento profissional.
 
 ---
 
-### c) Quais objetivos específicos ele atende?
+## Objetivo
 
-**Objetivo 1 — Compreender (nível cognitivo: Compreender — Bloom revisado)**
+Promover o desenvolvimento da autonomia, da confiança e do discernimento crítico de estudantes de tecnologia por meio de um percurso estruturado de reflexão sobre aprendizagem, carreira e Inteligência Artificial.
 
-> Descrever, com linguagem própria, os contextos situados em que a insegurança epistemológica se manifestou em sua trajetória de aprendizado.
+Ao final da trilha, espera-se que o estudante seja capaz de:
 
-O Mapa de Contextos é o microproduto que evidencia o alcance deste objetivo: o estudante registra onde a insegurança surgiu, quando aconteceu, o sentimento associado e a consequência para o próprio aprendizado — elementos que só podem ser preenchidos a partir da experiência vivida.
-
----
-
-### d) Quais foram as principais escolhas didáticas e técnicas?
-
-**Progressão em 3 passos (ativar → reconhecer → mapear):** respeita o ritmo do estudante, introduzindo complexidade de forma gradual — da pergunta provocativa ao registro biográfico estruturado.
-
-**Checklist de cenários reais:** valida que a dúvida é coletiva e não individual, reduzindo a defensiva emocional e criando identificação antes da reflexão pessoal.
-
-**Campos ancorados em experiência biográfica:** cada campo do Mapa de Contextos exige detalhe situacional (quando, onde, sentimento, consequência), o que dificulta a delegação acrítica a ferramentas de IA generativa — uma IA não possui o histórico vivido do estudante.
-
-**Feedback responsivo ao finalizar o mapa:** ao clicar em "Finalizar mapa", o estudante recebe uma devolutiva gerada a partir do que ele próprio registrou — citando os cenários marcados no checklist, os locais que descreveu, e exibindo, por contexto, o sentimento nomeado e a consequência para o aprendizado exatamente como foram escritos. Essa escolha é coerente com o Objetivo 1: a consequência é o campo que evidencia como a insegurança se manifesta nas decisões de aprendizado, e devolvê-la ao estudante torna visível que esse dado foi recebido e tem peso. A mensagem encerra com uma pergunta reflexiva sobre a origem da insegurança — contexto externo ou prática real — e um convite explícito a avançar para a etapa de Exploração, criando ponte motivacional e cognitiva entre as duas etapas.
+- Identificar os contextos que geram insegurança sobre seu aprendizado;
+- Diferenciar discursos alarmistas de necessidades reais de desenvolvimento;
+- Elaborar um plano pessoal de aprendizagem alinhado aos seus objetivos profissionais.
 
 ---
 
-## Como acessar
+## Público-alvo
 
-O protótipo está disponível no arquivo `index.html` deste repositório.  
-Para visualizar online: acesse via [este link]([https://pages.github.com](https://acrispteixeira.github.io/tcc-prototipo-ativacao/)) após publicado este repositório.
+Estudantes de:
+
+- Ciência da Computação
+- Engenharia de Software
+- Sistemas de Informação
+- Análise e Desenvolvimento de Sistemas
+- Áreas correlatas de tecnologia
+
+Principalmente aqueles que utilizam ferramentas de IA no dia a dia e questionam o valor do próprio processo de aprendizagem.
+
+---
+
+## Estrutura da trilha
+
+### 1. Ativação
+
+O estudante reconhece situações reais em que surgiu a dúvida sobre o próprio aprendizado.
+
+**Microproduto:**
+
+- Mapa de Contextos
+
+### 2. Exploração
+
+Apresentação de conceitos, vídeos e estudos de caso sobre:
+
+- Insegurança epistemológica
+- Sensacionalismo sobre IA
+- Lacunas reais de formação
+
+**Microproduto:**
+
+- Tabela Mito versus Realidade
+
+### 3. Aplicação
+
+O estudante utiliza os critérios construídos anteriormente para analisar sua própria trajetória.
+
+**Microproduto:**
+
+- Diagnóstico Pessoal
+
+### 4. Consolidação
+
+Construção de um plano de desenvolvimento baseado nas necessidades identificadas ao longo da trilha.
+
+**Microproduto final:**
+
+- Plano Pessoal de Aprendizagem
+
+---
+
+## Recursos utilizados
+
+- HTML
+- CSS
+- JavaScript
+- GitHub Pages
+- Vídeos educacionais
+- Estudos de caso
+- Feedback responsivo baseado nas respostas do estudante
+
+---
+
+## Fundamentação pedagógica
+
+A proposta foi construída a partir de referências relacionadas a:
+
+- Learning Experience Design (LXD)
+- Aprendizagem baseada em problemas
+- Taxonomia de Bloom Revisada
+- Autonomia na aprendizagem
+- Letramento digital crítico
+- Educação e Inteligência Artificial
+
+---
+
+## Acesso ao protótipo
+
+**Link do material:**
+
+https://acrispteixeira.github.io/tcc-prototipo/
+
+---
+
+## Autoria
+
+**Ana Cristina Pereira Teixeira**
+
+Especialização em Linguagem e Tecnologia — UFMG
+
+**Orientação:**  
+Prof. Ronaldo Correa Gomes Junior
+
+Belo Horizonte — 2026
+
+---
+
+## Licença
+
+Material desenvolvido para fins acadêmicos e educacionais no contexto do Trabalho de Conclusão de Curso da Especialização em Linguagem e Tecnologia da UFMG.
