@@ -1,7 +1,8 @@
-# TCC - Especialização em Linguagem e Tecnologia - FALE/UFMG
-## Disciplina Elaboração de Conteúdos Didáticos Digitais - 2026/1
-## Protótipo Trilha de Aprendizagem Híbrida - Etapa 1: Ativação
-### Trilha de Aprendizagem Híbrida Guia Prático Interativo + Vídeos Curtos + Estudos de Caso
+# TCC - Especialização em Linguagem e Tecnologia - FALE/UFMG - 2026/1
+
+## Disciplinas: Elaboração de Conteúdos Didáticos Digitais e Produção de Conteúdos Didáticos Digitais
+
+### "Por que aprender se a IA já faz?": uma trilha de autonomia e discernimento crítico para estudantes de tecnologia em contexto de inteligência artificial generativa
 
 ---
 
